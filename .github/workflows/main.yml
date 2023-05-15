@@ -1,0 +1,30 @@
+name: Snowflake pipeline
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubunto-latest
+    steps:
+    - name: Run a one-line script
+      run: echo Hello, world!
+      
+  read-pre:
+    runs-on: ubunto-latest
+    environment:
+      name: pre
+    needs: build   
+    steps:
+    - name: Run in pre
+      run: echo Hello
+ 
+  deploy-pre:
+   runs-on: ubunto-latest
+   environment:
+      name: pre
+   needs: build   
+   steps:
+   - name: Read in pre
+     run: echo Hello Pre
+    
+    
