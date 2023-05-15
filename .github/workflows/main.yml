@@ -12,19 +12,19 @@ jobs:
   read-pre:
     runs-on: ubunto-latest
     environment:
-      name: pre
+      name: Pre-Prod
     needs: build   
     steps:
     - name: Run in pre
       run: echo Hello
  
-  deploy-pre:
-   runs-on: ubunto-latest
-   environment:
-      name: pre
-   needs: read-pre   
-   steps:
-   - name: Read in pre
-     run: echo Hello Pre
+#   deploy-pre:
+#    runs-on: ubunto-latest
+#    environment:
+#       name: Pre-Prod
+#    needs: read-pre   
+#    steps:
+#    - name: Read in pre
+#      run: echo Hello Pre
     
     
