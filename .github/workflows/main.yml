@@ -11,7 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Run a one-line script
       run: echo Hello, world!
+
+  read-pre:
+    runs-on: ubunto-latest
+    environment:
+      name: Pre-Prod
+    needs: build   
+    steps:
+    - name: Run in pre
+      run: echo Hello
