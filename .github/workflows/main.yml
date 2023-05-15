@@ -22,7 +22,7 @@ jobs:
    runs-on: ubunto-latest
    environment:
       name: pre
-   needs: build   
+   needs: read-pre   
    steps:
    - name: Read in pre
      run: echo Hello Pre
